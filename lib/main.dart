@@ -30,8 +30,8 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final counterState = Provider.of<CounterState>(context);
-    final _counter = counterState.value;
-    void _incrementCounter() => counterState.increment();
+    // final _counter = counterState.value;
+    // void _incrementCounter() => counterState.increment();
 
     return Scaffold(
       appBar: AppBar(
@@ -41,21 +41,64 @@ class MyHomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            // Text(
+            //   'You have pushed the button this many times:',
+            // ),
+            // Text(
+            //   '$_counter',
+            //   style: Theme.of(context).textTheme.headline4,
+            // ),
             Text(
-              'You have pushed the button this many times:',
+              counterState.hasError
+                  ? ''
+                  : counterState.isWaiting
+                      ? 'Please wait...'
+                      : 'You have pushed the button this many times:',
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
+            counterState.hasError
+                ? Text("Oops, something's wrong!")
+                : counterState.isWaiting
+                    ? CircularProgressIndicator()
+                    : Text(
+                        '${counterState.value}',
+                        style: Theme.of(context).textTheme.headline4,
+                      ),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: _incrementCounter,
+      //   tooltip: 'Increment',
+      //   child: Icon(Icons.add),
+      // ),
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          FloatingActionButton(
+            child: Icon(Icons.undo),
+            // colors idicate when the button is inactive (i.e. when
+            // counterState is waiting)
+            backgroundColor: counterState.isWaiting
+                ? Theme.of(context).buttonColor
+                : Theme.of(context).floatingActionButtonTheme.backgroundColor,
+            // the button action is disabled when counterState is waiting
+            onPressed: counterState.isWaiting ? null : counterState.reset,
+          ),
+          FloatingActionButton(
+            child: Icon(Icons.add),
+            // colors indicate when the button is inactive (i.e. when
+            // counterState is waiting)
+            backgroundColor: (counterState.isWaiting || counterState.hasError)
+                ? Theme.of(context).buttonColor
+                : Theme.of(context).floatingActionButtonTheme.backgroundColor,
+            // the button action is disabled when counterState is waiting
+            onPressed: (counterState.isWaiting || counterState.hasError)
+                ? null
+                : counterState.increment,
+          ),
+        ],
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
