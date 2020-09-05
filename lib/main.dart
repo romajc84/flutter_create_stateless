@@ -10,14 +10,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Cloud Storage Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: ChangeNotifierProvider(
         create: (context) => CounterState(),
-        child: MyHomePage(title: 'Stateless Flutter Demo'),
+        child: MyHomePage(title: 'Cloud Storage Demo'),
       ),
     );
   }
@@ -53,7 +53,7 @@ class MyHomePage extends StatelessWidget {
                   ? ''
                   : counterState.isWaiting
                       ? 'Please wait...'
-                      : 'You have pushed the button this many times:',
+                      : 'The counter value is:',
             ),
             counterState.hasError
                 ? Text("Oops, something's wrong!")
@@ -63,6 +63,16 @@ class MyHomePage extends StatelessWidget {
                         '${counterState.value}',
                         style: Theme.of(context).textTheme.headline4,
                       ),
+            (counterState.hasError || counterState.isWaiting)
+                ? Text('')
+                : Column(
+                    children: [
+                      Text(
+                          'last changed by: ${counterState.lastUpdatedByDevice}'),
+                      SizedBox(height: 16.0),
+                      Text('(This device: ${counterState.myDevice})'),
+                    ],
+                  ),
           ],
         ),
       ),

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "807132519994",
+    "firebase_url": "https://flutterpersistentcloud-288613.firebaseio.com",
+    "project_id": "flutterpersistentcloud-288613",
+    "storage_bucket": "flutterpersistentcloud-288613.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:807132519994:android:387168c2c83588c2d29f03",
+        "android_client_info": {
+          "package_name": "com.example.flutter_create_stateless"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "807132519994-nfdioqt3u7fkjl8sk5sa9hssfkehluj3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfWgJIxmJzwuK3ctmBUiK6FAqYpoznD44"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "807132519994-nfdioqt3u7fkjl8sk5sa9hssfkehluj3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "807132519994-ipd12kgloh1cvg7slijkki17uvrmjmg1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutterCreateStateless"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
