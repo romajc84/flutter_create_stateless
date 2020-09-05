@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>807132519994-ipd12kgloh1cvg7slijkki17uvrmjmg1.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.807132519994-ipd12kgloh1cvg7slijkki17uvrmjmg1</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCeB0Ft2hEwxMJsRurSCsu8pk-TpFkF0fA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>807132519994</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.flutterCreateStateless</string>
+	<key>PROJECT_ID</key>
+	<string>flutterpersistentcloud-288613</string>
+	<key>STORAGE_BUCKET</key>
+	<string>flutterpersistentcloud-288613.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:807132519994:ios:49a873b71749d2f6d29f03</string>
+	<key>DATABASE_URL</key>
+	<string>https://flutterpersistentcloud-288613.firebaseio.com</string>
+</dict>
+</plist>
